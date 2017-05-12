@@ -1,0 +1,23 @@
+{
+  "name": "aceleradora",
+  "version": "1.0.0",
+  "description": "Parser do payload do Webhook",
+  "main": "aceleradora-parse.js",
+  "dependencies": {
+    "lodash.uniq": "4.5.0",
+    "speakingurl": "13.0.0"
+  },
+  "devDependencies": {
+    "xo": "0.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parser",
+    "aceleradora",
+    "webhook"
+  ],
+  "author": "Thiago Lagden",
+  "license": "MIT"
+}
