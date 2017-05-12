@@ -1,4 +1,56 @@
 {
+  "calculo": "14922",
+  "item": 1,
+  "premios": [
+    {
+      "seguradora": "Bradesco",
+      "codigo": "5444",
+      "franquias": [
+        {
+          "tipo": "(100%) Normal",
+          "premio": "1765.25",
+          "franquia": "2982.34"
+        },
+        {
+          "tipo": "(50%) Reduzida",
+          "premio": "2022.24",
+          "franquia": "1491.17"
+        }
+      ]
+    },
+    {
+      "seguradora": "Porto Seguro",
+      "codigo": "5886",
+      "franquias": [
+        {
+          "tipo": "(100%) Normal",
+          "premio": "3691.46",
+          "franquia": "3071"
+        },
+        {
+          "tipo": "(50%) Reduzida",
+          "premio": "4061.28",
+          "franquia": "1536"
+        }
+      ]
+    },
+    {
+      "seguradora": "Itaú",
+      "codigo": "5321",
+      "franquias": [
+        {
+          "tipo": "(100%) Normal",
+          "premio": "4026.89",
+          "franquia": "3071"
+        },
+        {
+          "tipo": "(50%) Reduzida",
+          "premio": "4430.94",
+          "franquia": "1536"
+        }
+      ]
+    }
+  ],
   "segurado": {
     "calculo": 14922,
     "produtor": 2,

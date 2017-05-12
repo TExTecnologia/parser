@@ -55,7 +55,10 @@ const paylodParsed = {
 			cpf: payload.segurado.cpf,
 			name: payload.segurado.nome
 		},
-		riskAssessmentQuestions: questions
+		riskAssessmentQuestions: questions,
+		offer: {
+			premios: payload.premios || []
+		}
 	}
 }
 
