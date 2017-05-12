@@ -165,7 +165,7 @@ select
 			(CASE WHEN (cape.C2Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C2Nome, '",',
 					'"sexo": "', c2se.resposta, '",',
-					'"data_nascimento": "', cape.C2TpDtNasc, '",',
+					'"data_nascimento": "', cape.C2DataNasc, '",',
 					'"estado_civil": "', c2ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c2di.resposta, '",',
 					'"anos_habilitado": "', cape.C2TempoCNH, '"', '},')
@@ -173,7 +173,7 @@ select
 			(CASE WHEN (cape.C3Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C3Nome, '",',
 					'"sexo": "', c3se.resposta, '",',
-					'"data_nascimento": "', cape.C3TpDtNasc, '",',
+					'"data_nascimento": "', cape.C3DataNasc, '",',
 					'"estado_civil": "', c3ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c3di.resposta, '",',
 					'"anos_habilitado": "', cape.C3TempoCNH, '"', '},')
@@ -181,7 +181,7 @@ select
 			(CASE WHEN (cape.C4Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C4Nome, '",',
 					'"sexo": "', c4se.resposta, '",',
-					'"data_nascimento": "', cape.C4TpDtNasc, '",',
+					'"data_nascimento": "', cape.C4DataNasc, '",',
 					'"estado_civil": "', c4ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c4di.resposta, '",',
 					'"anos_habilitado": "', cape.C4TempoCNH, '"', '},')
@@ -189,7 +189,7 @@ select
 			(CASE WHEN (cape.C5Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C5Nome, '",',
 					'"sexo": "', c5se.resposta, '",',
-					'"data_nascimento": "', cape.C5TpDtNasc, '",',
+					'"data_nascimento": "', cape.C5DataNasc, '",',
 					'"estado_civil": "', c5ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c5di.resposta, '",',
 					'"anos_habilitado": "', cape.C5TempoCNH, '"', '},')
@@ -197,7 +197,7 @@ select
 			(CASE WHEN (cape.C6Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C6Nome, '",',
 					'"sexo": "', c6se.resposta, '",',
-					'"data_nascimento": "', cape.C6TpDtNasc, '",',
+					'"data_nascimento": "', cape.C6DataNasc, '",',
 					'"estado_civil": "', c6ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c6di.resposta, '",',
 					'"anos_habilitado": "', cape.C6TempoCNH, '"', '},')
@@ -205,7 +205,7 @@ select
 			(CASE WHEN (cape.C7Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C7Nome, '",',
 					'"sexo": "', c7se.resposta, '",',
-					'"data_nascimento": "', cape.C7TpDtNasc, '",',
+					'"data_nascimento": "', cape.C7DataNasc, '",',
 					'"estado_civil": "', c7ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c7di.resposta, '",',
 					'"anos_habilitado": "', cape.C7TempoCNH, '"', '},')
@@ -213,7 +213,7 @@ select
 			(CASE WHEN (cape.C8Nome IS NOT NULL) THEN CONCAT_WS('', '{'
 					'"nome": "', cape.C8Nome, '",',
 					'"sexo": "', c8se.resposta, '",',
-					'"data_nascimento": "', cape.C8TpDtNasc, '",',
+					'"data_nascimento": "', cape.C8DataNasc, '",',
 					'"estado_civil": "', c8ec.resposta, '",',
 					'"quantos_dias_dirige_na_semana": "', c8di.resposta, '",',
 					'"anos_habilitado": "', cape.C8TempoCNH, '"', '},')
@@ -221,26 +221,26 @@ select
 		']'), '},]', '}]'
 	) as "condutores"
 from calc_mperfil cape
-left join tb_perfil c2se on c2se.tipo = 5 and c2se.valor = cape.C2EstCivil
-left join tb_perfil c2ec on c2ec.tipo = 6 and c2ec.valor = cape.C2Sexo
+left join tb_perfil c2se on c2se.tipo = 5 and c2se.valor = cape.C2Sexo
+left join tb_perfil c2ec on c2ec.tipo = 6 and c2ec.valor = cape.C2EstCivil
 left join tb_perfil c2di on c2di.tipo = 232 and c2di.novovalor = cape.C2Dirige
-left join tb_perfil c3se on c3se.tipo = 5 and c3se.valor = cape.C3EstCivil
-left join tb_perfil c3ec on c3ec.tipo = 6 and c3ec.valor = cape.C3Sexo
+left join tb_perfil c3se on c3se.tipo = 5 and c3se.valor = cape.C3Sexo
+left join tb_perfil c3ec on c3ec.tipo = 6 and c3ec.valor = cape.C3EstCivil
 left join tb_perfil c3di on c3di.tipo = 232 and c3di.novovalor = cape.C3Dirige
-left join tb_perfil c4se on c4se.tipo = 5 and c4se.valor = cape.C4EstCivil
-left join tb_perfil c4ec on c4ec.tipo = 6 and c4ec.valor = cape.C4Sexo
+left join tb_perfil c4se on c4se.tipo = 5 and c4se.valor = cape.C4Sexo
+left join tb_perfil c4ec on c4ec.tipo = 6 and c4ec.valor = cape.C4EstCivil
 left join tb_perfil c4di on c4di.tipo = 232 and c4di.novovalor = cape.C4Dirige
-left join tb_perfil c5se on c5se.tipo = 5 and c5se.valor = cape.C5EstCivil
-left join tb_perfil c5ec on c5ec.tipo = 6 and c5ec.valor = cape.C5Sexo
+left join tb_perfil c5se on c5se.tipo = 5 and c5se.valor = cape.C5Sexo
+left join tb_perfil c5ec on c5ec.tipo = 6 and c5ec.valor = cape.C5EstCivil
 left join tb_perfil c5di on c5di.tipo = 232 and c5di.novovalor = cape.C5Dirige
-left join tb_perfil c6se on c6se.tipo = 5 and c6se.valor = cape.C6EstCivil
-left join tb_perfil c6ec on c6ec.tipo = 6 and c6ec.valor = cape.C6Sexo
+left join tb_perfil c6se on c6se.tipo = 5 and c6se.valor = cape.C6Sexo
+left join tb_perfil c6ec on c6ec.tipo = 6 and c6ec.valor = cape.C6EstCivil
 left join tb_perfil c6di on c6di.tipo = 232 and c6di.novovalor = cape.C6Dirige
-left join tb_perfil c7se on c7se.tipo = 5 and c7se.valor = cape.C7EstCivil
-left join tb_perfil c7ec on c7ec.tipo = 6 and c7ec.valor = cape.C7Sexo
+left join tb_perfil c7se on c7se.tipo = 5 and c7se.valor = cape.C7Sexo
+left join tb_perfil c7ec on c7ec.tipo = 6 and c7ec.valor = cape.C7EstCivil
 left join tb_perfil c7di on c7di.tipo = 232 and c7di.novovalor = cape.C7Dirige
-left join tb_perfil c8se on c8se.tipo = 5 and c8se.valor = cape.C8EstCivil
-left join tb_perfil c8ec on c8ec.tipo = 6 and c8ec.valor = cape.C8Sexo
+left join tb_perfil c8se on c8se.tipo = 5 and c8se.valor = cape.C8Sexo
+left join tb_perfil c8ec on c8ec.tipo = 6 and c8ec.valor = cape.C8EstCivil
 left join tb_perfil c8di on c8di.tipo = 232 and c8di.novovalor = cape.C8Dirige
 where cape.calc_n = @calc_n and cape.calc_it = @calc_it
 ;
